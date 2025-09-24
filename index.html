@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styles.css">
+		<title>Git Basic Usage</title>
+	</head>
+	<body>
+		<nav id="navbar">
+			<header>Git Basic Usage</header>
+			<a class="nav-link" href="#Introduction">Introduction</a>
+			<a class="nav-link" href="#Install_Git">Install Git</a>
+			<a class="nav-link" href="#Start_a_Git_repository">Start a Git repository</a>
+			<a class="nav-link" href="#Stage_files">Stage files</a>
+			<a class="nav-link" href="#Commit_changes">Commit changes</a>
+			<a class="nav-link" href="#Clone_Git_repository">Clone Git repository</a>
+		</nav>
+		<main id="main-doc">
+			<h1>Git Basic Usage</h1>
+			<section id="Introduction" class="main-section">
+				<header><h2>Introduction</h2></header>
+				<p>Git is a distributed version control system. It was developed by the Linux community, and in particular by Linux Torvalds, the creator of the Linux Kernel. The Git version control system was intended to help the maintenance of Linux kernel project, aiming some goals, like speed, simplicity, scalability and distribution.</p>
+				<ul>
+					<li>Speed</li>
+					<li>Simplicity</li>
+					<li>Scalability</li>
+					<li>Distribution</li>
+				</ul>
+			</section>
+
+			<section id="Install_Git" class="main-section">
+				<header><h2>Install Git</h2></header>
+				<section>
+					<h3>On Linux distributions</h3>
+					<p>It is possible to install Git on Linux distributions either by some package manager or by compiling it from its source code, like on any operating system.</p>
+					<p>Here are a few examples of how to install Git using package managers:</p>
+					<ul>
+						<li>
+							<div>
+								<h4>With <em>apt/apt-get</em>, e.g. on Debian based distributions</h4>
+								<code class="command-snippet">
+									sudo apt install git
+								</code>
+								<br>
+								<code class="command-snippet">
+									sudo apt-get install git
+								</code>
+							</div>
+						</li>
+
+						<li>
+							<div>
+								<h4>With <em>dnf</em>, e.g. on RHEL based distributions</h4>
+								<code class="command-snippet">
+									sudo dnf install git
+								</code>
+							</div>
+						</li>
+
+						<li>
+							<div>
+								<h4>With <em>pacman</em>, e.g. on Arch based distributions</h4>
+								<code class="command-snippet">
+									sudo pacman -S git
+								</code>
+							</div>
+						</li>
+
+						<li>
+							<div>
+								<h4>With <em>emerge</em>, e.g. on Gentoo based distributions</h4>
+								<code class="command-snippet">
+									sudo emerge -q dev-vcs/git
+								</code>
+							</div>
+						</li>
+				</section>
+
+				<section>
+					<h3>On macOS</h3>
+					<p>To install Git on macOS, issuing the following command on the terminal emulator will prompt the necessary process, if it is not yet installed.</p>
+					<code class="command-snippet">
+						git --version
+					</code>
+				</section>
+
+				<section>
+					<h3>On Windows</h3>
+					<p>To install Git on Windows, it is possible to download the installer available on <a href="https://git-scm.com/download/win" target="_blank">https://git-scm.com/download/win.</a></p>
+				</section>
+			</section>
+
+			<section id="Start_a_Git_repository" class="main-section">
+				<header><h2>Start a Git repository</h2></header>
+				<p>It is possible to create a repository simply emitting the following command on a terminal emulator:</p>
+				<code class="command-snippet">
+					git init <i>repository_name</i>
+				</code>
+
+				<p>Alternatively, it is possible to use the current directory or another existing one as a new git repository, by emitting a command like the following:</p>
+				<code class="command-snippet">
+					git init .
+				</code>
+			</section>
+
+			<section id="Stage_files" class="main-section">
+				<header><h2>Stage files</h2></header>
+				<p>To stage files on a Git repository means, basically, to prepare them for very next commit, which is an effective version change.</p>
+				<p>So, before applying any change to the version snapshot, it is necessary to select those new or modified files that are meant to be commited to the snapshot. The following command snippets show how to stage one or multiple files.</p>
+				<code class="command-snippet">
+					git add fileA
+				</code>
+				<br>
+				<code class="command-snippet">
+					git add fileB fileC
+				</code>
+				<p>The following command snippet shows how to stage all new or modified files in the Git repository.</p>
+				<code class="command-snippet">
+					git add -A
+				</code>
+			</section>
+
+			<section id="Commit_changes" class="main-section">
+				<header><h2>Commit changes</h2></header>
+				<p>There are two basic ways to commit changes to the version snapshot of the Git repository. The first way allows to pass a version commentary direcly on the command line, as an argument; the second way requires to use a text editor to write such a commentary, usually for more elaborate ones. Here is the first way:</p>
+				<code class="command-snippet">
+					git commit -m "<i>Commentary on the change.</i>"
+				</code>
+				<p>Here is the second way, which will invoke the default text editor, after the command entry:</p>
+				<code class="command-snippet">
+					git commit
+				</code>
+			</section>
+
+			<section id="Clone_Git_repository" class="main-section">
+				<header><h2>Clone Git repository</h2></header>
+				<p>In order to clone a remote Git repository, that is usually hosted on a service like GitHub or GitLab, there is the following command pattern.</p>
+				<code class="command-snippet">
+					git clone <i>remote_repository_url</i>
+				</code>
+			</section>
+		</main>
+	</body>
+</html>
